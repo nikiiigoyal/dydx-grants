@@ -7,7 +7,7 @@ function Header() {
         <div className="">
           <img src="/Logo.png" alt="logo"></img>
         </div>
-        <div className="flex justify-around p-1 font-['Space_Mono'] text-[16px] items-center">
+        <div className="flex justify-around p-1 font-['Space_Mono'] text-[18px] items-center text-[#C8C7D8]">
           <a href="/discover-initiatives" className="mr-[25px]">
             Discover initiatives
           </a>
@@ -23,9 +23,7 @@ function Header() {
           <a href="/faq" className="mr-[25px]">
             Faq
           </a>
-          <Button className="bg-[#6966FF] text-white cursor-pointer font-serif text-center px-[16px] py-[12px] text-[16px]">
-            Apply for Grant
-          </Button>
+          <Button>Apply for Grant</Button>
         </div>
       </div>
     </>
