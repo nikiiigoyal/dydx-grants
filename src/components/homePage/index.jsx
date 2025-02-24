@@ -1,3 +1,4 @@
+import FundedGrants from "./FundedContent";
 import Hero from "./Hero";
 
 export default function HomePage() {
@@ -6,6 +7,7 @@ export default function HomePage() {
     <>
       <div>
         <Hero />
+        <FundedGrants />
       </div>
     </>
   );
