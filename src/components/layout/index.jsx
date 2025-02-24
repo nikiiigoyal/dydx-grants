@@ -4,11 +4,11 @@ import Header from "./Header";
 function Layout({ children }) {
   return (
     <div
-      className="min-h-screen w-screen bg-[#1c1c28] bg-[url('/gridLayoutBg.svg')] bg-cover bg-scroll border-[4px] border-solid border-[#6966ff] rounded-[1.5em] absolute inset-0
-     "
+    //   className="bg-[#1c1c28] bg-[url('/gridLayoutBg.svg')] bg-scroll bg-cover border-[4px] border-solid border-[#6966ff] rounded-[1.5em] absolute inset-0 bg-repeat
+    //  "
     >
       <Header />
-      {children}
+      <div className="overflow-y-auto h-full">{children}</div>
     </div>
   );
 }
