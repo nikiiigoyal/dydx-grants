@@ -1,4 +1,5 @@
 import { Button } from "../ui/button";
+import Features from "./HeroFeatures";
 
 export default function Hero() {
   console.log("Hero component rendered!");
@@ -32,7 +33,9 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div></div>
+        <div>
+          <Features />
+        </div>
       </div>
     </>
   );
