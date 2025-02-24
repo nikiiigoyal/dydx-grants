@@ -4,6 +4,9 @@
 
 @custom-variant dark (&:is(.dark *));
 #root {
+  box-sizing: border-box;
+  overflow: auto;
+  min-height: 100vh;
   /* max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -117,3 +120,25 @@
     @apply bg-background text-foreground;
   }
 } */
+body {
+  background-image: url('gridLayoutBg.svg');
+  min-height: 100vh;
+  background-color: #0e1015;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  border: 6px solid #6966ff;
+  border-radius: 1.5em;
+  font-family: Circular,sans-serif;
+  
+
+}
+/* body::after {
+  content: '';
+  position: fixed;
+top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  height: 4px; /* Border thickness */
+  /* background: #6966ff;
+  z-index: 1000; */
