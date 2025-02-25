@@ -1,7 +1,10 @@
 function FundedGrants() {
   return (
     <>
-      <div className="w-[50%] mx-auto flex items-center m-12 flex-col font-['Circular',_sans-serif]">
+      <div
+        className="w-[40%] mx-auto flex items-center m-10
+       flex-col font-['Circular',_sans-serif]"
+      >
         <div className="flex items-center">
           <img
             src="Down_arrow.png"
@@ -14,8 +17,8 @@ function FundedGrants() {
             Projects built with grants
           </h1>
         </div>
-        <div>
-          <p className="text-[#C8C7D8] text-sm text-center my-5">
+        <div className="">
+          <p className="text-[#C8C7D8] text-lg text-center my-4 p-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             nulla risus, consectetur ut bibendum non, gravida non libero.
           </p>
