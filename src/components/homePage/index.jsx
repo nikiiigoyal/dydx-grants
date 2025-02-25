@@ -1,4 +1,5 @@
 import Slider from "./Carousel";
+import Content from "./Content";
 import FundedGrants from "./FundedContent";
 import Hero from "./Hero";
 
@@ -10,6 +11,7 @@ export default function HomePage() {
         <Hero />
         <FundedGrants />
         <Slider />
+        <Content />
       </div>
     </>
   );
