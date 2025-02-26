@@ -1,3 +1,4 @@
+import ApplicationProcess from "./ApplicationProcess";
 import Slider from "./Carousel";
 import Content from "./Content";
 import Faq from "./Faq";
@@ -14,6 +15,7 @@ export default function HomePage() {
         <Slider />
         <Content />
         <Faq />
+        <ApplicationProcess />
       </div>
     </>
   );
