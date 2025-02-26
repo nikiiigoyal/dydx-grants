@@ -4,7 +4,7 @@ export default function Content() {
       <div>
         <div className="flex flex-col mx-auto items-center justify-between w-[50%]">
           <div className="flex">
-            <h1 className="text-2xl font-semibold text-[#FFFFFF] mb-9 flex items-end">
+            <h1 className="text-2xl font-semibold text-[#FFFFFF] mb-9 flex ml-5 items-end">
               What’s new?
               <img src="/side arrows.svg"></img>
             </h1>
