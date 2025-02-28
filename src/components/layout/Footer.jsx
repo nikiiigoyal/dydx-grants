@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <div className="py-4 px-6 mt-10 mb-10">
+      <div className="py-4 px-6 mt-10 mb-12 font-['Space_Mono']">
         <div className="flex flex-row justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-4">
             <a href="/" className="mr-8">
