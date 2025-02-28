@@ -3,7 +3,7 @@ export default function ApplicationProcess() {
     <>
       <div>
         <div>
-          <div className="flex items-center justify-between flex-col">
+          <div className="flex items-center justify-between flex-col mx-auto p-9">
             <h1 className="text-4xl text-[#FFFFFF] font-bold mb-5 flex text-center items-center">
               Application process
             </h1>
@@ -14,7 +14,12 @@ export default function ApplicationProcess() {
               </p>
             </div>
           </div>
-          <div></div>
+          <div>
+            <img
+              src="/Application.png"
+              className="flex items-center mx-auto mt-5 mb-9"
+            ></img>
+          </div>
         </div>
       </div>
     </>
