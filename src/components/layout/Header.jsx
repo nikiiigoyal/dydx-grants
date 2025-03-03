@@ -1,4 +1,5 @@
 import { Button } from "../ui/button";
+import MobileHeader from "./MobileHeader";
 
 function Header() {
   return (
@@ -24,6 +25,7 @@ function Header() {
             Faq
           </a>
           <Button>Apply for Grant</Button>
+          <MobileHeader />
         </div>
       </div>
     </>
