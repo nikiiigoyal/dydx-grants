@@ -25,7 +25,6 @@ function Header() {
             Faq
           </a>
           <Button>Apply for Grant</Button>
-          <MobileHeader />
         </div>
       </div>
     </>
