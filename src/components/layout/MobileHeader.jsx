@@ -18,7 +18,7 @@ export default function MobileHeader({ isOpen, onToggle }) {
         >
           <span
             className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
-              isOpen ? "rotate-45 translate-y-1.5" : ""
+              isOpen ? "rotate-45 translate-y-1.5 transition" : ""
             }`}
           ></span>
           <span
