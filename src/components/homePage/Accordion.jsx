@@ -11,10 +11,10 @@ export default function AccordionFaq() {
       <div>
         <Accordion type="single" collapsible className="w-[1000px] mx-auto">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="text-white text-[18px] mb-3 border-b border-t border-[#393953] data-[state=open]:border-b-0 hover:outline-none">
+            <AccordionTrigger className="text-[18px] mb-3 border-b border-t border-[#393953] data-[state=open]:border-b-0 hover:outline-none">
               How do i apply?
             </AccordionTrigger>
-            <AccordionContent className="pb-[24px] text-lg text-white">
+            <AccordionContent className="pb-[24px] text-lg">
               Fill out this application form. The application will only be
               shared with the Grants lead and members of the committee. The Lead
               will contact you directly if the application is successfully
@@ -22,10 +22,10 @@ export default function AccordionFaq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="text-white text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
+            <AccordionTrigger className=" text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
               Can i apply as a U.S. based person/company?
             </AccordionTrigger>
-            <AccordionContent className="pb-[24px] text-lg text-white">
+            <AccordionContent className="pb-[24px] text-lg ">
               Yes!
               <br></br>
               However, please note that the Grants team along with the
@@ -38,10 +38,10 @@ export default function AccordionFaq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger className="text-white text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
+            <AccordionTrigger className=" text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
               How will i be compensated?
             </AccordionTrigger>
-            <AccordionContent className="pb-[24px] text-lg text-white">
+            <AccordionContent className="pb-[24px] text-lg ">
               The Lead will work with you to establish possible milestones that
               could help split up the compensation so as to allow payment
               whenever a milestone is hit.
@@ -53,10 +53,10 @@ export default function AccordionFaq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger className="text-white text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
+            <AccordionTrigger className=" text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
               What type of project will qualify for a Grant?
             </AccordionTrigger>
-            <AccordionContent className="pb-[24px] text-lg text-white">
+            <AccordionContent className="pb-[24px] text-lg ">
               Anything that will have a positive impact on the dYdX product
               and/or community! We are hoping to fund a wide range of grants
               from external trading tools to governance dashboards and
@@ -67,10 +67,10 @@ export default function AccordionFaq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
-            <AccordionTrigger className="text-white text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
+            <AccordionTrigger className=" text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
               What is the application timeline? When can I expect to hear back?
             </AccordionTrigger>
-            <AccordionContent className="pb-[24px] text-lg text-white">
+            <AccordionContent className="pb-[24px] text-lg ">
               The team is working diligently to get back to applicants as
               quickly as possible. Applicants should expect to hear back within
               1 week of their initial application. Further processing time will
@@ -79,10 +79,10 @@ export default function AccordionFaq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-6">
-            <AccordionTrigger className="text-white text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
+            <AccordionTrigger className=" text-[18px] mb-3 border-b  border-[#393953] data-[state=open]:border-b-0 underline-0">
               How can I increase my chances of getting funded?
             </AccordionTrigger>
-            <AccordionContent className="pb-[24px] text-lg text-white">
+            <AccordionContent className="pb-[24px] text-lg ">
               The program is looking to fund projects building meaningful tools
               and growth opportunities that improve the long term prospects of
               dYdX and its community. A strong history of contribution to
@@ -94,10 +94,10 @@ export default function AccordionFaq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-7">
-            <AccordionTrigger className="text-white text-[18px] mb-3 border-b border-[#393953] data-[state=open]:border-b-0 underline-0">
+            <AccordionTrigger className=" text-[18px] mb-3 border-b border-[#393953] data-[state=open]:border-b-0 underline-0">
               How often do you approve new Rounds of funding?
             </AccordionTrigger>
-            <AccordionContent className="pb-[24px] text-lg text-white">
+            <AccordionContent className="pb-[24px] text-lg ">
               We are aiming to push funding rounds on a weekly cadence.
             </AccordionContent>
           </AccordionItem>
