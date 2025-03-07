@@ -1,0 +1,29 @@
+import AccordionFaq from "../homePage/Accordion";
+import AccordionSelectionCriteria from "./Faqs";
+
+function FrequentlyAskedQues() {
+  return (
+    <>
+      <div>
+        <h1 className="text-[40px] tracking-[-2.2%] font-bold text-center font-circular-std leading-[72px] text-white mt-6">
+          Frequently Asked Questions
+        </h1>
+        <div>
+          <div>
+            <h2 className="leading-[32px] tracking-[-1.9%] text-2xl text-white font-bold my-8">
+              Grant application process
+            </h2>
+            <AccordionFaq />
+          </div>
+          <div>
+            <h2 className="leading-[32px] tracking-[-1.9%] text-2xl text-white font-bold my-8">
+              The Grants Trust
+            </h2>
+            <AccordionSelectionCriteria />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+export default FrequentlyAskedQues;
