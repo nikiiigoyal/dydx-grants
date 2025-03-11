@@ -1,3 +1,4 @@
+import Create from "../homePage/Create";
 import TabsFilteringData from "./Tabs";
 
 function DiscoverInitiatives() {
@@ -14,6 +15,9 @@ function DiscoverInitiatives() {
         </div>
         <div>
           <TabsFilteringData />
+        </div>
+        <div>
+          <Create />
         </div>
       </div>
     </>
