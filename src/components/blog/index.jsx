@@ -1,4 +1,8 @@
 function Blog() {
-  return <></>;
+  return (
+    <>
+      <div></div>
+    </>
+  );
 }
 export default Blog;
