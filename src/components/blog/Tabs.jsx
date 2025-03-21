@@ -8,7 +8,7 @@ function TabsFilteringBlogData() {
       title: "Round 9 of approvals",
       status: "funding",
       date: "January 1, 2022",
-      image: "/images./round9.png",
+      image: "/images/round9.png",
     },
     {
       id: 2,
@@ -16,6 +16,48 @@ function TabsFilteringBlogData() {
       status: "funding",
       date: "January 1, 2022",
       image: "/images/round8.png",
+    },
+    {
+      id: 3,
+      title: "Round 7 of approvals",
+      status: "funding",
+      date: "January 1, 2022",
+      image: "/images/round7.png",
+    },
+    {
+      id: 4,
+      title: "Round 6 of approvals",
+      status: "funding",
+      date: "January 1, 2022",
+      image: "/images/round6.png",
+    },
+    {
+      id: 5,
+      title: "Round 5 of approvals",
+      status: "funding",
+      date: "January 1, 2022",
+      image: "/images/round5.png",
+    },
+    {
+      id: 6,
+      title: "Round 6 of approvals",
+      status: "funding",
+      date: "January 1, 2022",
+      image: "/images/round6.png",
+    },
+    {
+      id: 7,
+      title: "Round 5 of approvals",
+      status: "funding",
+      date: "January 1, 2022",
+      image: "/images/round5.png",
+    },
+    {
+      id: 8,
+      title: "Round 4 of approvals",
+      status: "funding",
+      date: "January 1, 2022",
+      image: "/images/round4.png",
     },
   ];
 
