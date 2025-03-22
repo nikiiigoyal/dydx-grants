@@ -1,9 +1,10 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useState } from "react";
+import { Switch } from "@/components/ui/switch"; // Import the Switch component
 
 const TabsFilteringFundingData = () => {
-  // Sample data with different status types and avatars
+  // Sample data with different status types, avatars, and completion status
   const initialData = [
     {
       id: 1,
@@ -12,6 +13,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$8,000",
       description:
         "They can be used to deliver spacecraft to the ends of the solar system with hyper-pinpoint accuracy.",
+      completed: true, // Added completion status
       avatars: [
         {
           name: "John Doe",
@@ -30,6 +32,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "They are mathematically consistent in the sense that no one rule would ever violate another.",
+      completed: false,
       avatars: [
         {
           name: "Alex Lee",
@@ -44,6 +47,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "This proved to be impossible using the traditional concepts of space and time. Einstein developed a new view of time first and then ...",
+      completed: true,
       avatars: [
         {
           name: "Maria Garcia",
@@ -66,6 +70,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "Historically, the electron, for example, was thought to behave like a particle, and then it was found that in many respects it behaved like a ...",
+      completed: false,
       avatars: [
         {
           name: "Yuki Tanaka",
@@ -80,6 +85,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "They finally obtained a consistent description of the behavior of matter on a small scale.",
+      completed: true,
       avatars: [
         {
           name: "Emily Johnson",
@@ -98,6 +104,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "Because atomic behavior is so unlike ordinary experience, it is very difficult to get used to, and it appears peculiar and mysterious to everyon ...",
+      completed: false,
       avatars: [
         {
           name: "CT",
@@ -112,6 +119,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "At the end of the 19th century, physics appeared to be at an apex. Several people are reported to have said something like this",
+      completed: true,
       avatars: [
         {
           name: "CN",
@@ -130,6 +138,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "Later, however (in the beginning of the twentieth century), it was found that light did indeed sometimes behave like a particle. ",
+      completed: false,
       avatars: [
         {
           name: "CT",
@@ -148,6 +157,7 @@ const TabsFilteringFundingData = () => {
       fundingAmount: "$5,000-$6,000",
       description:
         "So we have to learn about them in a sort of abstract or imaginative fashion and not by connection with our direct experience.",
+      completed: true,
       avatars: [
         {
           name: "CT",
@@ -166,11 +176,23 @@ const TabsFilteringFundingData = () => {
   ];
 
   const [activeTab, setActiveTab] = useState("all");
+  const [showOnlyCompleted, setShowOnlyCompleted] = useState(false);
 
-  // Filter data based on active tab
+  // Filter data based on active tab and completion status
   const getFilteredData = () => {
-    if (activeTab === "all") return initialData;
-    return initialData.filter((item) => item.status === activeTab);
+    let filtered = initialData;
+
+    // First filter by tab
+    if (activeTab !== "all") {
+      filtered = filtered.filter((item) => item.status === activeTab);
+    }
+
+    // Then filter by completion status if toggle is on
+    if (showOnlyCompleted) {
+      filtered = filtered.filter((item) => item.completed);
+    }
+
+    return filtered;
   };
 
   const getStatusCategory = (status) => {
@@ -233,6 +255,23 @@ const TabsFilteringFundingData = () => {
           </TabsList>
         </div>
 
+        {/* Added Toggle Bar */}
+        <div className="flex items-center mb-6">
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="completed-toggle"
+              checked={showOnlyCompleted}
+              onCheckedChange={setShowOnlyCompleted}
+            />
+            <label
+              htmlFor="completed-toggle"
+              className="text-white cursor-pointer"
+            >
+              Show only completed
+            </label>
+          </div>
+        </div>
+
         <TabsContent value={activeTab} className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {getFilteredData().map((item) => (
@@ -241,8 +280,16 @@ const TabsFilteringFundingData = () => {
                 className="bg-[#2D2D42] rounded-lg overflow-hidden h-full flex flex-col"
               >
                 <div className="p-6 flex-grow flex flex-col">
-                  <div className="text-[#9B9BAD] text-sm mb-2">
-                    {getStatusCategory(item.status)}
+                  <div className="flex justify-between">
+                    <div className="text-[#9B9BAD] text-sm mb-2">
+                      {getStatusCategory(item.status)}
+                    </div>
+                    {/* Displaying a badge if completed */}
+                    {/* {item.completed && (
+                      <div className="bg-green-600 text-white text-xs px-2 py-1 rounded">
+                        Completed
+                      </div>
+                    )} */}
                   </div>
                   <h3 className="text-white font-bold text-2xl mb-4">
                     {item.title}
@@ -271,7 +318,7 @@ const TabsFilteringFundingData = () => {
                                 .split(" ")
                                 .map((n) => n[0])
                                 .join("")
-                            : avatar.name}
+                            : avatar.name.substring(0, 2)}
                         </AvatarFallback>
                       </Avatar>
                     ))}
