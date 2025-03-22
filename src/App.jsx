@@ -6,6 +6,7 @@ import FrequentlyAskedQues from "./components/Faq";
 import DiscoverInitiatives from "./components/DiscoverInitiatives";
 import Blog from "./components/blog";
 import FundedGrants from "./components/FundedGrants";
+import ProgramExpenses from "./components/ProgramExpenses";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               element={<DiscoverInitiatives />}
             />
             <Route path="Funded-grants" element={<FundedGrants />} />
+            <Route path="Program-Expenses" element={<ProgramExpenses />} />
             <Route path="blog" element={<Blog />} />
           </Routes>
         </Layout>
