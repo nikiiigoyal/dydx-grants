@@ -5,6 +5,7 @@ import HomePage from "./components/homePage/index.jsx";
 import FrequentlyAskedQues from "./components/Faq";
 import DiscoverInitiatives from "./components/DiscoverInitiatives";
 import Blog from "./components/blog";
+import FundedGrants from "./components/FundedGrants";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               path="Discover-initiatives"
               element={<DiscoverInitiatives />}
             />
+            <Route path="Funded-grants" element={<FundedGrants />} />
             <Route path="blog" element={<Blog />} />
           </Routes>
         </Layout>
