@@ -1,74 +1,67 @@
+/* eslint-disable react/prop-types */
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useState } from "react";
 
-const TabsFilteringProgramData = () => {
-  // Sample data with different status types
+// Simple external link icon without using Lucide
+const ExternalLinkIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-white"
+  >
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
+const TabsFilteringExpenseData = () => {
+  // Sample expense data
   const initialData = [
     {
       id: 1,
-      title: "Funding Rate Page",
-      status: "funded",
-      fundingAmount: "$45,000-$85,000",
-      description:
-        "Page that provides a live look at all funding rates with popular timeframes in annualized format",
+      title: "Expense title",
+      amount: "-5,198.37",
+      currency: "USDC",
+      type: "Software",
+      description: "Monthly subscription for design tools",
+      status: "pending",
     },
     {
       id: 2,
-      title: "CLI Trading Tool",
-      status: "funded",
-      fundingAmount: "$25,000-$40,000",
-      description:
-        "Self-hosted CLI tool leveraging the dYdX API to allow all functionalities from a terminal",
+      title: "Office supplies",
+      amount: "-245.65",
+      currency: "USDC",
+      type: "Office",
+      description: "Printer paper and ink cartridges",
+      status: "approved",
     },
     {
       id: 3,
-      title: "New Language SDKs",
-      status: "open",
-      fundingAmount: "$25,000-$40,000",
-      description:
-        "Replicate existing Python SDK to new programming languages with all the same features",
+      title: "Team lunch",
+      amount: "-187.50",
+      currency: "USDC",
+      type: "Food & Beverage",
+      description: "Monthly team lunch at Bistro",
+      status: "pending",
     },
     {
       id: 4,
-      title: "Liquidation Alert Tool",
-      status: "completed",
-      fundingAmount: "$25,000-$40,000",
-      description:
-        "Self-hosted tool that alerts the trader of upcoming liquidation prices across multiple messaging venues",
-    },
-    {
-      id: 5,
-      title: "Governance Dashboard",
-      status: "funded",
-      fundingAmount: "$15,000-$30,000",
-      description:
-        "Governance page to promote discussions, proposals, delegation and voting",
-    },
-    {
-      id: 6,
-      title: "Delegation Tool",
-      status: "funded",
-      fundingAmount: "$15,000-$30,000",
-      description:
-        "Webpage to allow active participants to market their voting and enable direct delegation from DYDX holders",
-    },
-    {
-      id: 7,
-      title: "Discord bots",
-      status: "open",
-      fundingAmount: "$5,000-$10,000",
-      description:
-        "Additional Discord bots that notify members of activity on dYdX and governance",
-    },
-    {
-      id: 8,
-      title: "Reward tracking & Simulator",
-      status: "completed",
-      fundingAmount: "$20,000-$30,000",
-      description:
-        "Page or tool that allows traders to calculate future rewards and simulate earnings from activity",
+      title: "Conference tickets",
+      amount: "-1,299.00",
+      currency: "USDC",
+      type: "Travel",
+      description: "Tech conference registration fees",
+      status: "approved",
     },
   ];
+
   const [activeTab, setActiveTab] = useState("all");
 
   // Filter data based on active tab
@@ -89,67 +82,62 @@ const TabsFilteringProgramData = () => {
           <TabsList className="bg-transparent flex space-x-6">
             <TabsTrigger
               value="all"
-              className="text-white bg-transparent  data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
             >
               All
             </TabsTrigger>
             <TabsTrigger
-              value="open"
+              value="pending"
               className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
             >
-              Category
+              Pending
             </TabsTrigger>
             <TabsTrigger
-              value="funded"
+              value="approved"
               className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
             >
-              Category
-            </TabsTrigger>
-            <TabsTrigger
-              value="completed"
-              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
-            >
-              Category
+              Approved
             </TabsTrigger>
           </TabsList>
         </div>
 
         <TabsContent value={activeTab} className="mt-0 space-y-4">
-          {getFilteredData().map((item) => (
-            <div
-              key={item.id}
-              className="bg-[#2D2D42] rounded-lg p-6 border border-[#393953]"
-            >
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="text-[#FFFFFF] font-bold text-2xl">
-                  {item.title}
-                </h3>
-                <span
-                  className={`px-3 py-3 rounded-full text-sm font-medium ${
-                    item.status === "open"
-                      ? "bg-[#6966FF] text-white"
-                      : item.status === "funded"
-                      ? "bg-[#1C1C28] text-white"
-                      : "bg-[#16B57F] text-white"
-                  }`}
-                >
-                  {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
-                </span>
-              </div>
-
-              <p className="text-[#FFFFFF] text-sm font-normal mb-4">
-                {item.description}
-              </p>
-
-              <div className="font-['Space_Mono'] text-[#C8C7D8] tracking-[1px] text-sm">
-                Funding amount: {item.fundingAmount}
-              </div>
-            </div>
+          {getFilteredData().map((expense) => (
+            <ExpenseCard key={expense.id} expense={expense} />
           ))}
         </TabsContent>
       </Tabs>
     </div>
   );
 };
+const ExpenseCard = ({ expense }) => {
+  return (
+    <div className="bg-[#2D2D42] rounded-2xl p-6 border border-[#393953] flex flex-col">
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-[#FFFFFF] font-bold text-xl">{expense.title}</h3>
+        <div className="flex items-center">
+          <span className="text-[#FFFFFF] font-mono mr-2">
+            {expense.amount}
+          </span>
+          <ExternalLinkIcon />
+        </div>
+      </div>
 
-export default TabsFilteringProgramData;
+      <div className="mb-3">
+        {/* <p className="text-[#C8C7D8] text-sm mb-1">Type</p> */}
+        <p className="text-[#FFFFFF] text-sm">
+          {expense.type || "Not specified"}
+        </p>
+      </div>
+
+      <div>
+        {/* <p className="text-[#C8C7D8] text-sm mb-1">Description</p> */}
+        <p className="text-[#FFFFFF] text-sm">
+          {expense.description || "No description"}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default TabsFilteringExpenseData;
