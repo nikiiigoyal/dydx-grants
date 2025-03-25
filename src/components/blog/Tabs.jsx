@@ -143,11 +143,12 @@ function TabsFilteringBlogData() {
                         {item.status.charAt(0).toUpperCase() +
                           item.status.slice(1)}
                       </div>
-                      {/* <h3 className="text-white text-2xl font-semibold">
+                      /*{" "}
+                      <h3 className="text-white text-2xl font-semibold">
                         {firstPart}
                         <br />
                         {secondPart}
-                      </h3> */}
+                      </h3>
                     </div>
 
                     {/* Blue oval outline */}
