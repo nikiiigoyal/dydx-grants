@@ -69,15 +69,7 @@ function TabsFilteringBlogData() {
     return initialData.filter((item) => item.status === activeTab);
   };
 
-  // // Function to split the title for the card header
-  // const splitTitle = (title) => {
-  //   const parts = title.split(" of ");
-  //   return {
-  //     firstPart: parts[0],
-  //     secondPart: parts.length > 1 ? `of ${parts[1]}` : "",
-  //   };
-  // };
-
+  
   return (
     <div className="max-w-4xl mx-auto">
       <Tabs
@@ -143,13 +135,14 @@ function TabsFilteringBlogData() {
                         {item.status.charAt(0).toUpperCase() +
                           item.status.slice(1)}
                       </div>
-                      /*{" "}
+                      {/* {" "}
                       <h3 className="text-white text-2xl font-semibold">
                         {firstPart}
                         <br />
                         {secondPart}
                       </h3>
-                    </div>
+                    </div> */
+                    }
 
                     {/* Blue oval outline */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-24 border border-[#6966FF] rounded-full opacity-80"></div>
@@ -173,7 +166,7 @@ function TabsFilteringBlogData() {
                   </div>
                 </div>
               );
-            })}
+            }
           </div>
         </TabsContent>
       </Tabs>
