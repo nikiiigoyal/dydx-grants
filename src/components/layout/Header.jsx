@@ -1,6 +1,7 @@
 import { Button } from "../ui/button";
 import { useState, useEffect } from "react";
 import MobileHeader from "./MobileHeader";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,21 +39,21 @@ function Header() {
 
         {/* Desktop menu */}
         <div className="hidden md:flex justify-around p-1 font-['Space_Mono'] text-[18px] items-center text-[#C8C7D8]">
-          <a href="/discover-initiatives" className="mr-[25px]">
+          <Link to="/discover-initiatives" className="mr-[25px]">
             Discover initiatives
-          </a>
-          <a href="/funded-grants" className="mr-[25px]">
+          </Link>
+          <Link to="/funded-grants" className="mr-[25px]">
             Funded grants
-          </a>
-          <a href="/program-expenses" className="mr-[25px]">
+          </Link>
+          <Link to="/program-expenses" className="mr-[25px]">
             Program expenses
-          </a>
-          <a href="/blog" className="mr-[25px]">
+          </Link>
+          <Link to="/blog" className="mr-[25px]">
             Blog
-          </a>
-          <a href="/faq" className="mr-[25px]">
+          </Link>
+          <Link to="/faq" className="mr-[25px]">
             Faq
-          </a>
+          </Link>
           <Button>Apply for Grant</Button>
         </div>
 
