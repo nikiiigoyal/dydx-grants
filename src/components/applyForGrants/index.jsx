@@ -1,4 +1,11 @@
 function ApplyForGrants() {
-  return <></>;
+  return (
+    <>
+      <div>
+        <h1 className="text-3xl">Apply for a grant</h1>
+        <p>Please complete the application below for Grant consideration!</p>
+      </div>
+    </>
+  );
 }
 export default ApplyForGrants;
