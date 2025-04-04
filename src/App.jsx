@@ -25,7 +25,7 @@ function App() {
             <Route path="Program-Expenses" element={<ProgramExpenses />} />
             <Route path="blog" element={<Blog />} />
             {/* <Route path="" element={<ApplyForGrants />} /> */}
-            <Route path="/" element={<ApplyForGrants />} />
+            <Route path="Apply" element={<ApplyForGrants />} />
           </Routes>
         </Layout>
       </BrowserRouter>
