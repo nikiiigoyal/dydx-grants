@@ -54,7 +54,9 @@ function Header() {
           <Link to="/faq" className="mr-[25px]">
             Faq
           </Link>
-          <Button>Apply for Grant</Button>
+          <Link to="Apply">
+            <Button>Apply for Grant</Button>
+          </Link>
         </div>
 
         {/* Render mobile menu component only on mobile */}
