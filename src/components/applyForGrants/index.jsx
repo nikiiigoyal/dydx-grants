@@ -12,9 +12,6 @@ function ApplyForGrants() {
         </p>
       </div>
       <div className=" mt-5">
-        {/* <h1 className="text-[#FFFFFF] text-2xl font-semibold">
-          Grant Application
-        </h1> */}
         <Form />
       </div>
     </>
