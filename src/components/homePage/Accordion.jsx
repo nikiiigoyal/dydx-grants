@@ -8,8 +8,8 @@ import {
 export default function AccordionFaq() {
   return (
     <>
-      <div className="w-full">
-        <Accordion type="single" collapsible className="w-full mx-auto">
+      <div className="w-3/5 mx-auto">
+        <Accordion type="single" collapsible className="mx-auto">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg mb-3 border-b border-t border-gray-700 data-[state=open]:border-b-0 hover:outline-none">
               How do i apply?
