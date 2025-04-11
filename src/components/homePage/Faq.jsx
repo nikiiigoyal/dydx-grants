@@ -5,9 +5,9 @@ export default function Faq() {
     <>
       <div className="mb-8 p-9 font-['Circular',_sans-serif]">
         <div className="flex items-center flex-col mx-auto w-[30%]">
-          <h1 className="text-4xl text-[#FFFFFF] font-bold mb-5 flex ">
+          <h1 className="sm:text-4xl text-[#FFFFFF] font-bold mb-5 flex justify-between">
             Frequently asked{" "}
-            <span className="flex ml-4">
+            <span className="flex">
               questions{"  "}
               <img src="/oval.svg" className="absolute left-auto"></img>
             </span>
