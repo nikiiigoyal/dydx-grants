@@ -72,8 +72,7 @@ export default function Slider() {
         <Carousel
           opts={{
             align: "start",
-            lopp: true,
-            // slidesToScroll: 1,
+            loop: true,
           }}
           className="w-full font-['Circular',_sans-serif] rounded-[20px]"
         >
@@ -81,7 +80,7 @@ export default function Slider() {
             {projectData.map((project) => (
               <CarouselItem
                 key={project.id}
-                className="pl-4 basis-full sm:basis-1/2 md:basis-1/3"
+                className="pl-4 basis-full xs:basis-full sm:basis-1/2 md:basis-1/3"
               >
                 <div
                   className={`bg-[#292841] text-white rounded-lg p-6 h-full ${
