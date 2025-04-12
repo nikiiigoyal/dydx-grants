@@ -2,28 +2,34 @@ export default function Footer() {
   return (
     <>
       <div className="py-4 px-6 mt-10 mb-12 font-['Space_Mono']">
-        <div className="flex flex-row justify-between items-center max-w-7xl mx-auto">
-          <div className="flex items-center gap-4">
-            <a href="/" className="mr-8">
+        <div className="flex flex-col md:flex-row justify-between  max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row  gap-4 w-full">
+            <a href="/" className="mr-0 md:mr-8 mb-4 md:mb-0">
               <img src="/crosslogo.png" alt="Cross Logo" className="" />
             </a>
 
-            <div className="text-[#C8C7D8] text-lg flex gap-4">
-              <a href="/About" className="hover:text-white px-3 py-1 rounded">
+            <div className="text-[#C8C7D8] text-lg flex flex-col md:flex-row gap-4 w-full ">
+              <a
+                href="/About"
+                className="hover:text-white px-3 py-1 rounded flex  h-8"
+              >
                 About
               </a>
-              <a href="/faq" className="hover:text-white px-3 py-1 rounded">
+              <a
+                href="/faq"
+                className="hover:text-white px-3 py-1 rounded flex  h-8"
+              >
                 FAQ
               </a>
               <a
                 href="/brand-assets"
-                className="hover:text-white px-3 py-1 rounded"
+                className="hover:text-white px-3 py-1 rounded flex  h-8"
               >
                 Brand assets
               </a>
               <a
                 href="https://www.dydx.foundation/"
-                className="hover:text-white px-3 py-1 rounded flex items-center"
+                className="hover:text-white px-3 py-1 rounded items-center flex  h-8"
               >
                 dYdX Foundation
                 <svg
@@ -40,7 +46,7 @@ export default function Footer() {
               </a>
               <a
                 href="https://dydx.exchange/"
-                className="hover:text-white px-3 py-1 rounded flex items-center"
+                className="hover:text-white px-3 py-1 rounded items-center flex  h-8"
               >
                 dYdX trading
                 <svg
@@ -58,7 +64,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex items-center">
+          <div className="flex  mt-6 md:mt-0">
             <a href="#" className="mr-5">
               <img src="/discord.png" alt="Discord" className="" />
             </a>
