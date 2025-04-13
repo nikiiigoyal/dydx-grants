@@ -17,7 +17,7 @@ function FundedGrants() {
         <div>
           <p className="text-[#C8C7D8] my-2 md:my-4 p-2 md:p-4 text-sm md:text-base lg:text-lg text-center mt-2 md:mt-4 lg:mt-6 mb-4 md:mb-6 lg:mb-9">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            nulla risus, consectetur ut bibendum non, gravida non libero.
+            nulla risus, consectetur ut bibendum non, gravida non.
           </p>
         </div>
         <div className="flex items-center">
