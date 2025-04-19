@@ -78,54 +78,54 @@ const TabsFilteringData = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-3 sm:p-4 md:p-6">
+    <div className="w-full max-w-4xl mx-auto p-6">
       <Tabs
         defaultValue="all"
         value={activeTab}
         onValueChange={setActiveTab}
         className="w-full"
       >
-        <div className="flex justify-center mb-4 md:mb-8">
-          <TabsList className="bg-transparent flex w-full overflow-x-auto sm:space-x-6">
+        <div className="flex justify-center mb-8">
+          <TabsList className="bg-transparent flex space-x-6">
             <TabsTrigger
               value="all"
-              className="text-white bg-transparent text-sm flex-1 sm:flex-none data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-2 sm:p-3 data-[state=active]:text-white whitespace-nowrap"
+              className="text-white bg-transparent  data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
             >
               All
             </TabsTrigger>
             <TabsTrigger
               value="open"
-              className="text-white bg-transparent text-sm flex-1 sm:flex-none data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-2 sm:p-3 data-[state=active]:text-white whitespace-nowrap"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
             >
               Open
             </TabsTrigger>
             <TabsTrigger
               value="funded"
-              className="text-white bg-transparent text-sm flex-1 sm:flex-none data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-2 sm:p-3 data-[state=active]:text-white whitespace-nowrap"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
             >
               Funded
             </TabsTrigger>
             <TabsTrigger
               value="completed"
-              className="text-white bg-transparent text-sm flex-1 sm:flex-none data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-2 sm:p-3 data-[state=active]:text-white whitespace-nowrap"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
             >
               Completed
             </TabsTrigger>
           </TabsList>
         </div>
 
-        <TabsContent value={activeTab} className="mt-0 space-y-3 sm:space-y-4">
+        <TabsContent value={activeTab} className="mt-0 space-y-4">
           {getFilteredData().map((item) => (
             <div
               key={item.id}
-              className="bg-[#2D2D42] rounded-lg p-4 sm:p-5 md:p-6 border border-[#393953]"
+              className="bg-[#2D2D42] rounded-lg p-6 border border-[#393953]"
             >
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 sm:mb-3">
-                <h3 className="text-[#FFFFFF] font-bold text-lg sm:text-xl md:text-2xl mb-2 sm:mb-0">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-[#FFFFFF] font-bold text-2xl">
                   {item.title}
                 </h3>
                 <span
-                  className={`px-2 py-1 sm:px-3 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm font-medium self-start sm:self-auto ${
+                  className={`px-3 py-3 rounded-full text-sm font-medium ${
                     item.status === "open"
                       ? "bg-[#6966FF] text-white"
                       : item.status === "funded"
@@ -137,11 +137,11 @@ const TabsFilteringData = () => {
                 </span>
               </div>
 
-              <p className="text-[#FFFFFF] text-xs sm:text-sm font-normal mb-3 sm:mb-4">
+              <p className="text-[#FFFFFF] text-sm font-normal mb-4">
                 {item.description}
               </p>
 
-              <div className="font-['Space_Mono'] text-[#C8C7D8] tracking-[1px] text-xs sm:text-sm">
+              <div className="font-['Space_Mono'] text-[#C8C7D8] tracking-[1px] text-sm">
                 Funding amount: {item.fundingAmount}
               </div>
             </div>
