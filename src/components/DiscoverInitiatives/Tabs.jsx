@@ -68,6 +68,14 @@ const TabsFilteringData = () => {
       description:
         "Page or tool that allows traders to calculate future rewards and simulate earnings from activity",
     },
+    {
+      id: 9,
+      title: "Funding Rate Page",
+      status: "funded",
+      fundingAmount: "$45,000-$85,000",
+      description:
+        "Page that provides a live look at all funding rates with popular timeframes in annualized format",
+    },
   ];
   const [activeTab, setActiveTab] = useState("all");
 
