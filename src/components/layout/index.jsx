@@ -17,7 +17,7 @@ function Layout({ children }) {
 Layout.propTypes = {
   // Required props
   children: PropTypes.node.isRequired,
-  // Optional props
+
   // className: PropTypes.string,
 };
 
