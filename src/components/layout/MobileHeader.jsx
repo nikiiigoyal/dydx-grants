@@ -60,9 +60,6 @@ export default function MobileHeader({ isOpen, onToggle }) {
             <a href="/faq" className="py-4 w-full hover:bg-gray-800">
               Faq
             </a>
-            {/* <div className="py-4 w-full">
-            <Button className="w-4/5">Apply</Button>
-          </div> */}
           </div>
         </div>
       </div>
