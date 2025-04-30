@@ -10,7 +10,7 @@ export default function ApplicationProcess() {
             <div className="w-full">
               <p className="text-base sm:text-lg text-center mt-4 sm:mt-9 mb-4 sm:mb-9 leading-relaxed text-gray-300">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                nulla risus, consectetur ut bibendum non, gravida non libero.
+                nulla risus, consectetur ut bibendum non, non libero.
               </p>
             </div>
           </div>
