@@ -4,7 +4,7 @@ function ProgramExpenses() {
   return (
     <>
       <div>
-        <h1 className="text-2xl">Program Expenses</h1>
+        <h1 className="text-2xl text-white text-center">Program Expenses</h1>
       </div>
       <div>
         <TabsFilteringProgramData />

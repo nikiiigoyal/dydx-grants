@@ -37,7 +37,7 @@ const projectData = [
     image: null,
   },
   {
-    id: 1,
+    id: 3,
     type: "Crowdfund",
     title: "Funding rates page",
     fundingAmount: "$5,000 - $6,000",
@@ -50,7 +50,7 @@ const projectData = [
     image: null, // No image for this card
   },
   {
-    id: 2,
+    id: 4,
     type: "Edition",
     title: "Tradingview integration",
     fundingAmount: "$5,000 - $6,000",
@@ -67,8 +67,8 @@ const projectData = [
 
 export default function Slider() {
   return (
-    <>
-      <div className="mx-auto max-w-7xl px-4 mb-9">
+    <div className="w-full overflow-hidden">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6 mb-4 sm:mb-6 lg:mb-9">
         <Carousel
           opts={{
             align: "start",
@@ -76,35 +76,44 @@ export default function Slider() {
           }}
           className="w-full font-['Circular',_sans-serif] rounded-[20px]"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-2 sm:-ml-4">
             {projectData.map((project) => (
               <CarouselItem
                 key={project.id}
-                className="pl-4 basis-full xs:basis-full sm:basis-1/2 md:basis-1/3"
+                className="pl-2 sm:pl-4 basis-[90%] xs:basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
               >
-                <div
-                  className={`bg-[#292841] text-white rounded-lg p-6 h-full ${
-                    !project.image ? "" : ""
-                  }`}
-                >
-                  <div className="text-[#A59EBA] text-sm mb-5 font-['Space_Mono']">
+                <div className="bg-[#292841] text-white rounded-lg p-3 sm:p-4 lg:p-6 h-full shadow-lg">
+                  {/* Type Badge */}
+                  <div className="text-[#A59EBA] text-xs sm:text-sm mb-3 sm:mb-4 lg:mb-5 font-['Space_Mono'] uppercase tracking-wider">
                     {project.type}
                   </div>
-                  <div className="text-[#FFFFFF] text-[24px] font-bold mb-5">
+
+                  {/* Title */}
+                  <div className="text-[#FFFFFF] text-lg sm:text-xl lg:text-[24px] font-bold mb-3 sm:mb-4 lg:mb-5 leading-tight">
                     {project.title}
                   </div>
-                  <div className="text-[#A59EBA] text-sm mb-3 font-['Space_Mono']">
+
+                  {/* Funding Amount */}
+                  <div className="text-[#A59EBA] text-xs sm:text-sm mb-2 sm:mb-3 font-['Space_Mono']">
                     Funding Amount: {project.fundingAmount}
                   </div>
-                  <p className="text-[#FFFFFF] text-sm mb-8">
+
+                  {/* Description */}
+                  <p className="text-[#FFFFFF] text-xs sm:text-sm mb-4 sm:mb-6 lg:mb-8 leading-relaxed line-clamp-4 sm:line-clamp-none">
                     {project.description}
                   </p>
 
-                  <div className="flex mt-5">
+                  {/* Contributors */}
+                  <div className="flex mt-auto space-x-1 sm:space-x-2">
                     {project.contributors.map((contributor) => (
-                      <Avatar key={contributor.id}>
-                        <AvatarImage src={contributor.image}></AvatarImage>
-                        <AvatarFallback>{contributor.fallback}</AvatarFallback>
+                      <Avatar
+                        key={contributor.id}
+                        className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 border-2 border-[#6966ff]"
+                      >
+                        <AvatarImage src={contributor.image} />
+                        <AvatarFallback className="text-xs sm:text-sm bg-[#6966ff] text-white">
+                          {contributor.fallback}
+                        </AvatarFallback>
                       </Avatar>
                     ))}
                   </div>
@@ -112,10 +121,24 @@ export default function Slider() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+
+          {/* Navigation Buttons - Hidden on mobile, visible on larger screens */}
+          <CarouselPrevious className="hidden sm:flex -left-4 lg:-left-6 bg-[#6966ff] hover:bg-[#5854d6] text-white border-0 shadow-lg" />
+          <CarouselNext className="hidden sm:flex -right-4 lg:-right-6 bg-[#6966ff] hover:bg-[#5854d6] text-white border-0 shadow-lg" />
         </Carousel>
+
+        {/* Mobile Dots Indicator */}
+        <div className="flex justify-center mt-4 sm:hidden">
+          <div className="flex space-x-2">
+            {projectData.map((_, index) => (
+              <div
+                key={index}
+                className="w-2 h-2 rounded-full bg-[#A59EBA] opacity-50"
+              />
+            ))}
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
