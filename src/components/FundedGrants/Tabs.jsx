@@ -207,56 +207,62 @@ const TabsFilteringFundingData = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div className="w-full max-w-6xl mx-auto p-3 sm:p-4 md:p-6">
       <Tabs
         defaultValue="all"
         value={activeTab}
         onValueChange={setActiveTab}
         className="w-full"
       >
-        <div className="flex justify-center mb-8">
-          <TabsList className="bg-transparent flex space-x-6">
+        {/* Mobile-first responsive tabs */}
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <TabsList className="bg-transparent flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 lg:gap-6 max-w-full">
             <TabsTrigger
               value="all"
-              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none px-2 py-1 sm:px-3 sm:py-2 md:p-3 data-[state=active]:text-white text-xs sm:text-sm md:text-base whitespace-nowrap"
             >
               All
             </TabsTrigger>
             <TabsTrigger
               value="technical"
-              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none px-2 py-1 sm:px-3 sm:py-2 md:p-3 data-[state=active]:text-white text-xs sm:text-sm md:text-base whitespace-nowrap"
             >
-              Technical/Tool Development
+              <span className="hidden sm:inline">
+                Technical/Tool Development
+              </span>
+              <span className="sm:hidden">Technical</span>
             </TabsTrigger>
             <TabsTrigger
               value="governance"
-              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none px-2 py-1 sm:px-3 sm:py-2 md:p-3 data-[state=active]:text-white text-xs sm:text-sm md:text-base whitespace-nowrap"
             >
               Governance
             </TabsTrigger>
             <TabsTrigger
               value="growth"
-              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none px-2 py-1 sm:px-3 sm:py-2 md:p-3 data-[state=active]:text-white text-xs sm:text-sm md:text-base whitespace-nowrap"
             >
-              Growth/Marketing
+              <span className="hidden sm:inline">Growth/Marketing</span>
+              <span className="sm:hidden">Growth</span>
             </TabsTrigger>
             <TabsTrigger
               value="analytics"
-              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none px-2 py-1 sm:px-3 sm:py-2 md:p-3 data-[state=active]:text-white text-xs sm:text-sm md:text-base whitespace-nowrap"
             >
               Analytics
             </TabsTrigger>
             <TabsTrigger
               value="thirdParty"
-              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none p-3 data-[state=active]:text-white"
+              className="text-white bg-transparent data-[state=active]:bg-[#393953] data-[state=active]:shadow-none px-2 py-1 sm:px-3 sm:py-2 md:p-3 data-[state=active]:text-white text-xs sm:text-sm md:text-base whitespace-nowrap"
             >
-              Third Party Provider
+              <span className="hidden sm:inline">Third Party Provider</span>
+              <span className="sm:hidden">Third Party</span>
             </TabsTrigger>
           </TabsList>
         </div>
 
-        {/* Added Toggle Bar */}
-        <div className="flex items-center mb-6">
+        {/* Toggle Bar - Mobile Responsive */}
+        <div className="flex items-center justify-center sm:justify-start mb-4 sm:mb-6">
           <div className="flex items-center space-x-2">
             <Switch
               id="completed-toggle"
@@ -265,7 +271,7 @@ const TabsFilteringFundingData = () => {
             />
             <label
               htmlFor="completed-toggle"
-              className="text-white cursor-pointer"
+              className="text-white cursor-pointer text-sm sm:text-base"
             >
               Show only completed
             </label>
@@ -273,15 +279,15 @@ const TabsFilteringFundingData = () => {
         </div>
 
         <TabsContent value={activeTab} className="mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {getFilteredData().map((item) => (
               <div
                 key={item.id}
                 className="bg-[#2D2D42] rounded-lg overflow-hidden h-full flex flex-col"
               >
-                <div className="p-6 flex-grow flex flex-col">
-                  <div className="flex justify-between">
-                    <div className="text-[#9B9BAD] text-sm mb-2">
+                <div className="p-4 sm:p-6 flex-grow flex flex-col">
+                  <div className="flex justify-between items-start">
+                    <div className="text-[#9B9BAD] text-xs sm:text-sm mb-2">
                       {getStatusCategory(item.status)}
                     </div>
                     {/* Displaying a badge if completed */}
@@ -291,24 +297,24 @@ const TabsFilteringFundingData = () => {
                       </div>
                     )} */}
                   </div>
-                  <h3 className="text-white font-bold text-2xl mb-4">
+                  <h3 className="text-white font-bold text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 leading-tight">
                     {item.title}
                   </h3>
-                  <div className="text-[#9B9BAD] text-sm mb-2">
+                  <div className="text-[#9B9BAD] text-xs sm:text-sm mb-2">
                     Funding amount: {item.fundingAmount}
                   </div>
-                  <p className="text-white mt-4 mb-8 flex-grow">
+                  <p className="text-white text-sm sm:text-base mt-3 sm:mt-4 mb-6 sm:mb-8 flex-grow leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="p-4 mt-auto">
+                <div className="p-3 sm:p-4 mt-auto">
                   <div className="flex">
                     {item.avatars.slice(0, 3).map((avatar, index) => (
                       <Avatar
                         key={index}
-                        className={`border-2 border-[#2D2D42] h-10 w-10 ${
-                          index > 0 ? "-ml-2" : ""
+                        className={`border-2 border-[#2D2D42] h-8 w-8 sm:h-10 sm:w-10 ${
+                          index > 0 ? "-ml-1 sm:-ml-2" : ""
                         }`}
                       >
                         <AvatarImage src={avatar.src} alt={avatar.name} />
@@ -323,7 +329,7 @@ const TabsFilteringFundingData = () => {
                       </Avatar>
                     ))}
                     {item.avatars.length > 3 && (
-                      <div className="bg-[#6366F1] h-10 w-10 rounded-full -ml-2 flex items-center justify-center text-white text-sm">
+                      <div className="bg-[#6366F1] h-8 w-8 sm:h-10 sm:w-10 rounded-full -ml-1 sm:-ml-2 flex items-center justify-center text-white text-xs sm:text-sm">
                         +{item.avatars.length - 3}
                       </div>
                     )}
