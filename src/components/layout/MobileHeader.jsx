@@ -17,18 +17,18 @@ export default function MobileHeader({ isOpen, onToggle }) {
           onClick={onToggle}
         >
           <span
-            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
-              isOpen ? "rotate-45 translate-y-1.5 " : ""
+            className={`block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
+              isOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"
             }`}
           ></span>
           <span
-            className={`block h-0.5 w-6 bg-white my-1 transition-all duration-300 ${
+            className={`block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
               isOpen ? "opacity-0" : ""
             }`}
           ></span>
           <span
-            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
-              isOpen ? "-rotate-45 -translate-y-1.5" : ""
+            className={`block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
+              isOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"
             }`}
           ></span>
         </button>
@@ -38,6 +38,14 @@ export default function MobileHeader({ isOpen, onToggle }) {
             isOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
+          {/* Cross button positioned on top of menu */}
+          <button
+            className="absolute top-4 right-4 flex flex-col justify-center items-center w-10 h-10 z-50"
+            onClick={onToggle}
+          >
+            <span className="block h-0.5 w-6 bg-white rotate-45 translate-y-0"></span>
+            <span className="block h-0.5 w-6 bg-white -rotate-45 translate-y-0 -translate-y-0.5"></span>
+          </button>
           <div className="flex flex-col items-center w-full text-center font-['Space_Mono'] text-[18px] text-[#C8C7D8]">
             <a
               href="/discover-initiatives"
